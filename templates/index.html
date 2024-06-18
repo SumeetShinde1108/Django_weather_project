@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <h1>Weather Data</h1>
+    <table id="weather-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for weather in weather_data %}
+            <tr>
+                <td>{{ weather.date }}</td>
+                <td>{{ weather.value }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
